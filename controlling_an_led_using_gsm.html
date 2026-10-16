@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Interactive educational project guide: controlling an LED using GSM SMS commands.">
+<title>Controlling an LED Using GSM | Project Guide</title>
+<style>
+:root{--bg:#f4f7fb;--panel:#fff;--ink:#172033;--muted:#5c667a;--accent:#1769aa;--teal:#0d9488;--line:#dbe3ee;--soft:#eaf3fb;--warn:#fff4d8;--good:#e4f8ef;--shadow:0 8px 28px rgba(22,40,70,.08)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:78px}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}a{color:var(--accent)}.wrap{max-width:1150px;margin:auto}.hero{background:linear-gradient(125deg,#10233f,#155b88 65%,#0d9488);color:#fff;padding:44px 22px 38px}.eyebrow{text-transform:uppercase;letter-spacing:.13em;font-size:.78rem;font-weight:800;color:#aee8ef}.hero h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.1;margin:.55rem 0}.hero p{max-width:850px;color:#e4f4ff}.pills{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}.pill{border:1px solid #ffffff55;border-radius:999px;padding:5px 11px;font-size:.85rem;background:#ffffff12}.nav{position:sticky;top:0;z-index:5;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 3px 12px #10233f0a}.nav .wrap{display:flex;gap:6px;overflow-x:auto;padding:10px 14px}.nav a{white-space:nowrap;text-decoration:none;font-size:.88rem;font-weight:700;color:#34435a;padding:8px 10px;border-radius:8px}.nav a:hover{background:var(--soft)}main{padding:24px 18px 60px}.section{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:clamp(18px,3vw,30px);margin:18px auto;box-shadow:var(--shadow)}h2{font-size:1.6rem;line-height:1.25;margin:0 0 14px}h3{margin:22px 0 8px;font-size:1.12rem}p{margin:.55rem 0 1rem}.muted{color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}.tile{border:1px solid var(--line);border-radius:13px;padding:16px;background:#fff}.tile h3{margin:0 0 7px}.tag{display:inline-block;background:var(--soft);color:#155b88;border-radius:6px;padding:2px 8px;font-size:.78rem;font-weight:800}.callout{border-left:4px solid var(--accent);background:var(--soft);padding:13px 16px;border-radius:0 10px 10px 0;margin:14px 0}.warn{background:var(--warn);border-left-color:#b7791f}.good{background:var(--good);border-left-color:#15803d}table{border-collapse:collapse;width:100%;margin:12px 0;font-size:.94rem}th,td{text-align:left;vertical-align:top;padding:10px;border-bottom:1px solid var(--line)}th{background:#f0f5fa}.diagram{overflow:auto;border:1px solid var(--line);border-radius:14px;background:#fbfdff;padding:12px}.diagram svg{display:block;min-width:690px;width:100%;height:auto}.steps{counter-reset:steps}.step{counter-increment:steps;position:relative;padding:12px 12px 12px 48px;border:1px solid var(--line);border-radius:12px;margin:10px 0}.step:before{content:counter(steps);position:absolute;left:12px;top:12px;background:var(--accent);color:#fff;width:25px;height:25px;display:grid;place-items:center;border-radius:50%;font-weight:800}.btn{border:0;border-radius:9px;padding:10px 15px;font-weight:800;background:var(--accent);color:#fff;cursor:pointer}.btn.secondary{background:#e7eef6;color:#20324a}.quiz-q{border:1px solid var(--line);border-radius:12px;padding:15px;margin:12px 0}.quiz-q legend{font-weight:800;padding:0 5px}.options{display:grid;gap:7px;margin-top:8px}.options label{display:flex;gap:8px;align-items:flex-start;padding:8px;border-radius:8px;cursor:pointer}.options label:hover{background:#f2f7fb}.feedback{display:none;margin-top:10px;padding:10px;border-radius:8px}.feedback.show{display:block}.correct{background:var(--good)}.incorrect{background:#ffebeb}.score{font-size:1.1rem;font-weight:800;margin:12px 0}.bar{height:12px;background:#e7edf4;border-radius:999px;overflow:hidden}.bar span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--teal));transition:width .3s}details{border:1px solid var(--line);border-radius:10px;margin:9px 0;padding:12px 14px}summary{font-weight:800;cursor:pointer}pre{white-space:pre-wrap;background:#101c2e;color:#e7f1ff;padding:16px;border-radius:10px;overflow:auto}.small{font-size:.9rem}@media(max-width:600px){.hero{padding:32px 18px}.nav .wrap{padding:8px}.nav a{font-size:.82rem}.section{border-radius:13px}table{font-size:.85rem}th,td{padding:7px}}@media print{body{background:#fff;font-size:11pt}.hero{background:#fff;color:#000;padding:10px 0}.hero p,.eyebrow{color:#333}.nav,.no-print,.btn{display:none!important}main{padding:0}.section{box-shadow:none;break-inside:avoid;border:1px solid #bbb;margin:10px 0;padding:15px}a{color:#000;text-decoration:none}.diagram{overflow:visible}.diagram svg{min-width:0}}
+</style>
+</head>
+<body>
+<header class="hero"><div class="wrap">
+<div class="eyebrow">Embedded systems · GSM communication · IoT basics</div>
+<h1>Controlling an LED Using GSM</h1>
+<p>An interactive project guide for switching an LED ON or OFF by sending SMS commands to a GSM-enabled microcontroller. Learn the architecture, component roles, message flow, sample logic, testing, and viva topics.</p>
+<div class="pills"><span class="pill">SMS commands</span><span class="pill">Microcontroller</span><span class="pill">GSM module</span><span class="pill">Interactive quiz</span><span class="pill">Offline HTML</span></div>
+</div></header>
+<nav class="nav"><div class="wrap"><a href="#overview">Overview</a><a href="#architecture">Architecture</a><a href="#components">Components</a><a href="#working">Working</a><a href="#circuit">Connections</a><a href="#code">Algorithm</a><a href="#testing">Testing</a><a href="#applications">Applications</a><a href="#viva">Viva</a><a href="#quiz">Quiz</a><a href="#revision">Revision</a></div></nav>
+<main class="wrap">
+<section class="section" id="overview"><h2>1. Project overview</h2>
+<p><strong>Controlling an LED Using GSM</strong> demonstrates remote switching through SMS. A user sends a text such as <code>LED ON</code> or <code>LED OFF</code> to a SIM-enabled GSM module. The microcontroller reads the received message, validates the command, and changes a digital output that controls an LED.</p>
+<div class="grid">
+<div class="tile"><span class="tag">Input</span><h3>SMS command</h3><p>A message is sent from an authorized phone to the SIM number in the GSM module.</p></div>
+<div class="tile"><span class="tag">Processing</span><h3>Controller</h3><p>The microcontroller reads the modem response, extracts the SMS text, and checks the command.</p></div>
+<div class="tile"><span class="tag">Output</span><h3>LED state</h3><p>A GPIO pin drives the LED circuit or a suitable driver stage to turn the LED ON or OFF.</p></div>
+</div>
+<h3>Objectives</h3><ul><li>Understand serial communication between a controller and GSM modem.</li><li>Receive and parse SMS commands.</li><li>Control a digital output according to valid messages.</li><li>Handle invalid commands and communication failures.</li><li>Demonstrate remote control without requiring the sender and device to be on the same local Wi-Fi network.</li></ul>
+<div class="callout warn"><strong>Important:</strong> GSM modules vary by model and cellular generation. Confirm supported networks, supply voltage, peak current, UART voltage levels, and antenna requirements from the module datasheet. Many older 2G-only modules may not work where 2G service is unavailable.</div>
+</section>
+<section class="section" id="architecture"><h2>2. Block diagram</h2><p>The SMS travels through the cellular network to the modem. The modem communicates with the microcontroller over a serial UART connection.</p>
+<div class="diagram"><svg viewBox="0 0 1000 280" role="img" aria-label="GSM LED control system block diagram"><defs><marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#42617d"/></marker></defs>
+<rect x="20" y="80" width="180" height="80" rx="12" fill="#eaf3fb" stroke="#1769aa" stroke-width="2"/><text x="110" y="111" text-anchor="middle" font-size="16" font-weight="bold" fill="#172033">Mobile phone</text><text x="110" y="135" text-anchor="middle" font-size="14" fill="#172033">SMS: LED ON/OFF</text>
+<rect x="260" y="80" width="180" height="80" rx="12" fill="#fff4d8" stroke="#b7791f" stroke-width="2"/><text x="350" y="111" text-anchor="middle" font-size="16" font-weight="bold" fill="#172033">Cellular network</text><text x="350" y="135" text-anchor="middle" font-size="14" fill="#172033">SMS delivery</text>
+<rect x="500" y="80" width="180" height="80" rx="12" fill="#f0eaff" stroke="#7555b7" stroke-width="2"/><text x="590" y="111" text-anchor="middle" font-size="16" font-weight="bold" fill="#172033">GSM modem</text><text x="590" y="135" text-anchor="middle" font-size="14" fill="#172033">SIM + UART</text>
+<rect x="740" y="80" width="160" height="80" rx="12" fill="#e8f7f4" stroke="#0d9488" stroke-width="2"/><text x="820" y="111" text-anchor="middle" font-size="16" font-weight="bold" fill="#172033">Controller</text><text x="820" y="135" text-anchor="middle" font-size="14" fill="#172033">Parse command</text>
+<path d="M200 120 H260" stroke="#42617d" stroke-width="3" marker-end="url(#arr)"/><path d="M440 120 H500" stroke="#42617d" stroke-width="3" marker-end="url(#arr)"/><path d="M680 120 H740" stroke="#42617d" stroke-width="3" marker-end="url(#arr)"/>
+<rect x="740" y="205" width="160" height="55" rx="10" fill="#e4f8ef" stroke="#15803d" stroke-width="2"/><text x="820" y="228" text-anchor="middle" font-size="15" font-weight="bold" fill="#172033">LED + resistor</text><text x="820" y="246" text-anchor="middle" font-size="13" fill="#172033">Digital output</text><path d="M820 160 V205" stroke="#42617d" stroke-width="3" marker-end="url(#arr)"/>
+<rect x="500" y="205" width="180" height="55" rx="10" fill="#f1f5f9" stroke="#9aa9bb"/><text x="590" y="228" text-anchor="middle" font-size="14" font-weight="bold" fill="#172033">Regulated power</text><text x="590" y="246" text-anchor="middle" font-size="12" fill="#172033">Separate modem supply as needed</text><path d="M590 160 V205" stroke="#94a3b8" stroke-dasharray="5 5" stroke-width="2"/>
+</svg></div><div class="callout"><strong>Signal flow:</strong> Send SMS → cellular delivery → modem receives SMS → controller checks command → GPIO changes → LED state changes.</div>
+</section>
+<section class="section" id="components"><h2>3. Components and functions</h2><table><thead><tr><th>Component</th><th>Function</th><th>Notes</th></tr></thead><tbody>
+<tr><td>Microcontroller board</td><td>Reads modem data and controls output pin.</td><td>Arduino Uno, ESP32, or another UART-capable board can be used with suitable logic levels.</td></tr>
+<tr><td>GSM modem/module</td><td>Receives SMS through a SIM and exposes commands/data over UART.</td><td>Examples include SIM800-series or other compatible cellular modules; network support varies.</td></tr>
+<tr><td>SIM card + antenna</td><td>Provides cellular subscription and radio connection.</td><td>SIM must be active, with SMS service and network coverage.</td></tr>
+<tr><td>LED</td><td>Visual indication of output state.</td><td>Use a current-limiting resistor, typically selected for the LED and GPIO voltage.</td></tr>
+<tr><td>Resistor</td><td>Limits LED current.</td><td>Estimate with R = (VGPIO − VLED) / ILED; respect the controller's pin-current limits.</td></tr>
+<tr><td>Regulated power supply</td><td>Supplies stable voltage to each module.</td><td>Cellular modems can draw short high-current bursts; use the exact module's recommended supply.</td></tr>
+<tr><td>Connecting wires / breadboard</td><td>Make low-voltage signal and power connections.</td><td>Use common ground for UART signals; never connect incompatible logic levels directly.</td></tr>
+</tbody></table>
+</section>
+<section class="section" id="working"><h2>4. Working principle</h2><div class="steps">
+<div class="step"><strong>Power-up.</strong> The controller and GSM modem start. The modem registers on the cellular network.</div>
+<div class="step"><strong>Configure the modem.</strong> Firmware sends AT commands over UART and configures SMS text mode and incoming-message notifications.</div>
+<div class="step"><strong>Receive SMS.</strong> The modem signals that a message arrived or stores it in its message memory.</div>
+<div class="step"><strong>Read and validate.</strong> The controller reads the sender and message body, trims spaces/newlines, and checks the command against the allowed set.</div>
+<div class="step"><strong>Switch the LED.</strong> For <code>LED ON</code>, set the output HIGH (for a typical active-high circuit); for <code>LED OFF</code>, set it LOW.</div>
+<div class="step"><strong>Optional acknowledgement.</strong> The device may send a reply SMS such as “LED is ON”, provided the reply feature is implemented and SMS service is available.</div>
+</div><h3>Example commands</h3><div class="grid"><div class="tile"><span class="tag">Command 1</span><h3><code>LED ON</code></h3><p>Turns the configured output ON.</p></div><div class="tile"><span class="tag">Command 2</span><h3><code>LED OFF</code></h3><p>Turns the configured output OFF.</p></div><div class="tile"><span class="tag">Command 3</span><h3><code>STATUS</code></h3><p>Optional command to report the current state if status handling is programmed.</p></div></div>
+<div class="callout warn">Do not accept arbitrary SMS text as a command. For a safer prototype, allowlist sender numbers where practical, validate complete commands, and avoid using this simple demo to switch high-voltage or hazardous equipment.</div></section>
+<section class="section" id="circuit"><h2>5. Illustrative LED connection</h2><p>For a typical active-high GPIO output, the LED and resistor are connected in series between the output pin and ground. This simplified drawing shows only the LED output path; modem wiring depends on the exact hardware.</p>
+<div class="diagram"><svg viewBox="0 0 900 220" role="img" aria-label="Microcontroller output connected to resistor and LED to ground"><defs><marker id="arr3" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#42617d"/></marker></defs>
+<rect x="25" y="60" width="190" height="90" rx="12" fill="#eaf3fb" stroke="#1769aa" stroke-width="2"/><text x="120" y="95" text-anchor="middle" font-size="16" font-weight="bold" fill="#172033">Microcontroller</text><text x="120" y="120" text-anchor="middle" font-size="14" fill="#172033">GPIO output pin</text>
+<path d="M215 105 H290" stroke="#42617d" stroke-width="3"/><rect x="290" y="89" width="105" height="32" fill="#fff4d8" stroke="#b7791f" stroke-width="2"/><text x="342" y="110" text-anchor="middle" font-size="14" font-weight="bold" fill="#172033">R limit</text>
+<path d="M395 105 H470" stroke="#42617d" stroke-width="3"/><path d="M470 105 L500 80 L500 130 Z" fill="#e4f8ef" stroke="#15803d" stroke-width="2"/><line x1="505" y1="78" x2="505" y2="132" stroke="#15803d" stroke-width="3"/><path d="M505 105 H610 V170 H700" stroke="#42617d" stroke-width="3" fill="none"/><text x="487" y="60" text-anchor="middle" font-size="14" fill="#172033">LED</text><text x="610" y="93" text-anchor="middle" font-size="13" fill="#5c667a">Series path</text><line x1="700" y1="170" x2="760" y2="170" stroke="#42617d" stroke-width="3"/><line x1="760" y1="170" x2="760" y2="184" stroke="#42617d" stroke-width="3"/><line x1="738" y1="184" x2="782" y2="184" stroke="#42617d" stroke-width="3"/><line x1="744" y1="191" x2="776" y2="191" stroke="#42617d" stroke-width="3"/><line x1="751" y1="198" x2="769" y2="198" stroke="#42617d" stroke-width="3"/><text x="805" y="190" font-size="14" fill="#172033">GND</text>
+</svg></div>
+<p><strong>Resistor example:</strong> If a 5 V GPIO drives a red LED with a forward voltage of about 2 V at a chosen current of 5 mA, then R ≈ (5 − 2) / 0.005 = 600 Ω. A nearby standard value such as 620 Ω may be suitable, subject to the LED and GPIO specifications. For a 3.3 V board, recalculate using its output voltage.</p>
+<div class="callout warn">Never power a GSM modem from a GPIO pin. Power it using the supply recommended by its datasheet. If the modem UART and controller use different logic voltages, add an appropriate level shifter.</div></section>
+<section class="section" id="code"><h2>6. Algorithm and sample AT-command flow</h2><p>AT commands are modem-specific in detail, but common SMS configuration uses text mode and a notification mode. Consult the selected module's AT command manual.</p><pre>Start
+  ↓
+Initialize UART and output pin
+  ↓
+Send modem setup commands
+  ↓
+Wait for incoming SMS notification
+  ↓
+Read sender and message body
+  ↓
+Is sender/command allowed?
+  ├─ No → Ignore or report invalid command
+  └─ Yes
+       ├─ "LED ON"  → Set GPIO HIGH
+       ├─ "LED OFF" → Set GPIO LOW
+       └─ "STATUS"  → Report current state (optional)
+  ↓
+Optionally send acknowledgement
+  ↓
+Return to waiting state</pre>
+<h3>Illustrative Arduino-style pseudocode</h3><pre>// Pseudocode: adapt to your GSM module and SMS library
+const int LED_PIN = 7;
+
+setup() {
+  pinMode(LED_PIN, OUTPUT);
+  digitalWrite(LED_PIN, LOW);  // start OFF
+  startSerialPorts();
+  configureGsmForSmsTextMode();
+}
+
+loop() {
+  if (newSmsAvailable()) {
+    String sender = readSmsSender();
+    String body = normalize(readSmsBody());
+
+    if (senderIsAuthorized(sender)) {
+      if (body == "LED ON") {
+        digitalWrite(LED_PIN, HIGH);
+        // optional: sendSms(sender, "LED is ON");
+      } else if (body == "LED OFF") {
+        digitalWrite(LED_PIN, LOW);
+        // optional: sendSms(sender, "LED is OFF");
+      } else if (body == "STATUS") {
+        // optional: reply with the current state
+      }
+    }
+  }
+}</pre><p class="muted small">This is pseudocode rather than a compile-ready sketch: functions such as <code>newSmsAvailable()</code> depend on the modem and library. A complete sketch requires your exact board and GSM module model.</p></section>
+<section class="section" id="testing"><h2>7. Testing and troubleshooting</h2><table><thead><tr><th>Test</th><th>Expected result</th><th>If it fails, check</th></tr></thead><tbody>
+<tr><td>Modem startup</td><td>Modem responds to an AT command.</td><td>UART baud rate, TX/RX crossing, common ground, supply and logic levels.</td></tr>
+<tr><td>Network registration</td><td>Modem reports registered/ready state.</td><td>SIM status, antenna, coverage, supported network bands and service availability.</td></tr>
+<tr><td>Send <code>LED ON</code></td><td>LED turns on.</td><td>Exact message parsing, output pin number, polarity, resistor and ground path.</td></tr>
+<tr><td>Send <code>LED OFF</code></td><td>LED turns off.</td><td>Trailing newline/space handling and command comparison.</td></tr>
+<tr><td>Invalid SMS</td><td>No unintended output change.</td><td>Ensure only exact allowlisted commands are accepted.</td></tr>
+<tr><td>Power during SMS receive</td><td>Modem stays connected and controller does not reset.</td><td>Peak-current supply capacity, wiring, decoupling and regulator specification.</td></tr>
+</tbody></table>
+<details><summary>GSM module keeps restarting</summary><p>A weak supply is a common cause. Check the module's rated input range and peak current, use short appropriate power wiring, and follow the manufacturer's decoupling recommendations.</p></details>
+<details><summary>SMS arrives but LED does not change</summary><p>Check the message storage/notification method, UART receive buffer, parsing of sender and body, capitalization, whitespace, GPIO configuration, and active-high versus active-low circuit.</p></details>
+<details><summary>Modem never registers</summary><p>Confirm the SIM is active, the antenna is connected, the selected modem supports the local network technology/bands, and the operator still provides that service.</p></details>
+</section>
+<section class="section" id="applications"><h2>8. Applications, advantages, and limitations</h2><div class="grid">
+<div class="tile"><h3>Applications</h3><ul><li>Remote indicator light</li><li>Basic lab automation demo</li><li>Remote status signalling</li><li>Educational serial communication project</li></ul></div>
+<div class="tile"><h3>Advantages</h3><ul><li>Simple text-based user interface</li><li>Can operate over cellular coverage without local Wi-Fi</li><li>Low-complexity control logic</li><li>Useful introduction to AT commands and UART</li></ul></div>
+<div class="tile"><h3>Limitations</h3><ul><li>SMS delivery may be delayed</li><li>Requires a working cellular network and service</li><li>Network compatibility varies by modem</li><li>Unauthorized commands must be prevented</li></ul></div>
+</div><h3>Possible extensions</h3><ul><li>Reply SMS with the current LED state.</li><li>Support multiple outputs using a strict command list.</li><li>Add sender authorization and command logging.</li><li>Add a local push button for manual control.</li><li>Use an isolated driver stage for loads that exceed GPIO limits; do not switch hazardous mains loads with a bare GPIO circuit.</li></ul></section>
+<section class="section" id="viva"><h2>9. Viva questions and answers</h2>
+<details><summary>1. What is GSM?</summary><p>GSM stands for Global System for Mobile Communications, a cellular communication standard. In this project a compatible modem receives SMS messages.</p></details>
+<details><summary>2. What is the role of the microcontroller?</summary><p>It communicates with the modem, parses received SMS commands, applies command validation, and controls the LED output.</p></details>
+<details><summary>3. What is an AT command?</summary><p>An AT command is a text command sent to a modem to configure or query functions such as network status and SMS handling.</p></details>
+<details><summary>4. Why is UART used?</summary><p>UART provides asynchronous serial communication between the controller and the GSM modem using TX and RX lines.</p></details>
+<details><summary>5. Why is a resistor connected in series with the LED?</summary><p>It limits current and helps prevent damage to the LED and output pin.</p></details>
+<details><summary>6. Why should modem power be considered separately?</summary><p>Cellular transmission can create current peaks that exceed what a controller board's regulator or USB port can reliably provide.</p></details>
+<details><summary>7. What happens when an invalid SMS arrives?</summary><p>The firmware should ignore it or return an error, without changing the output state.</p></details>
+<details><summary>8. What is the purpose of an acknowledgement SMS?</summary><p>It can tell the sender that the command was processed, although the reply itself can fail or be delayed.</p></details>
+<details><summary>9. How can unauthorized control be reduced?</summary><p>Allowlist sender numbers, accept only exact commands, avoid exposing secrets in logs, and consider stronger authentication for real deployments.</p></details>
+<details><summary>10. What are the main limitations of this project?</summary><p>SMS latency, cellular coverage, modem/network compatibility, power stability, and command security.</p></details>
+<details><summary>11. Can this circuit control a motor or household appliance directly?</summary><p>No. A microcontroller GPIO and LED circuit are not suitable for driving such loads directly. A correctly rated driver/relay interface and electrical safety measures would be needed.</p></details>
+<details><summary>12. What would you improve in a future version?</summary><p>Add sender validation, status replies, robust error handling, local manual override, event logs, and a modem/network compatibility check.</p></details>
+</section>
+<section class="section" id="quiz"><h2>10. Interactive 10-question quiz</h2><p class="muted">Select one answer per question and check your score. Explanations appear after submission.</p><form id="quizForm"><div id="questions"></div><div class="no-print" style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn" type="button" id="checkBtn">Check answers</button><button class="btn secondary" type="button" id="resetBtn">Reset quiz</button></div><div id="score" class="score" aria-live="polite"></div><div class="bar"><span id="scoreBar"></span></div></form></section>
+<section class="section" id="revision"><h2>11. Quick revision sheet</h2><table><tbody><tr><th>GSM modem</th><td>Receives SMS and communicates with the controller through a supported interface, often UART.</td></tr><tr><th>AT commands</th><td>Text commands used to configure and query the modem.</td></tr><tr><th>Command parsing</th><td>Normalize text, validate sender, and compare against exact allowed commands.</td></tr><tr><th>LED resistor</th><td>Approximate value: R = (VGPIO − VLED) / ILED.</td></tr><tr><th>Power</th><td>Use module-rated supplies and account for cellular transmit-current peaks.</td></tr><tr><th>Reliability</th><td>Test invalid SMS, network loss, delayed delivery, reset, and low-supply conditions.</td></tr></tbody></table>
+<h3>Project report checklist</h3><ul><li>Abstract and objectives</li><li>Block diagram and exact circuit/wiring diagram</li><li>Components with part numbers and datasheets</li><li>AT-command sequence and algorithm flowchart</li><li>Firmware and explanation</li><li>Test cases, actual observations, and limitations</li><li>Conclusion and future enhancements</li></ul>
+<div class="callout"><strong>Assumptions and limitations:</strong> This is a generic reference project. No exact board, GSM module, wiring photo, or tested code was supplied. The diagram and pseudocode are illustrative; adapt them to your hardware manual and verify all voltage levels before wiring.</div><button class="btn no-print" onclick="window.print()">Print / Save as PDF</button></section>
+</main><footer class="muted" style="text-align:center;padding:22px">Controlling an LED Using GSM · Educational project guide · Single-file offline webpage</footer>
+<script>
+const quiz=[
+{q:"What is the main input to this project?",a:["SMS command","Temperature reading","GPS coordinate","Audio signal"],c:0,e:"The user sends an SMS such as LED ON or LED OFF."},
+{q:"What is the role of the GSM modem?",a:["Limit LED current","Receive SMS and communicate with the controller","Replace the microcontroller program","Act as the LED resistor"],c:1,e:"The modem receives the message through the cellular network and exposes data/commands to the controller."},
+{q:"What is UART commonly used for here?",a:["Serial communication between modem and controller","LED light emission","Cellular subscription billing","Voltage regulation"],c:0,e:"UART is a common asynchronous serial interface between the microcontroller and modem."},
+{q:"Why is a resistor connected in series with the LED?",a:["To boost SMS signal","To limit LED current","To decode commands","To increase network coverage"],c:1,e:"The resistor limits current to protect the LED and output pin."},
+{q:"Which command is intended to turn the LED off in this guide?",a:["GSM START","LED OFF","POWER GSM","SMS CLEAR"],c:1,e:"The example firmware recognizes LED OFF as the off command."},
+{q:"What should happen when an invalid command arrives?",a:["Run any available command","Change the output randomly","Ignore it or report an error without switching the LED","Reset the SIM subscription"],c:2,e:"Only allowed commands should affect the output."},
+{q:"Why does a GSM modem need an adequate power supply?",a:["It can draw high current bursts during transmission","It is a type of LED","It does not use electricity","It creates GPS coordinates"],c:0,e:"Transmit bursts can cause voltage dips if the supply cannot provide the required current."},
+{q:"What does an AT command do?",a:["Changes LED colour physically","Configures or queries the modem","Replaces the antenna","Measures resistor value"],c:1,e:"AT commands control modem functions such as SMS mode and network status."},
+{q:"What is one limitation of SMS control?",a:["It never needs a network","SMS delivery may be delayed or unavailable","It works only through USB","It guarantees instant delivery"],c:1,e:"SMS delivery depends on network conditions and can be delayed or fail."},
+{q:"How can unauthorized SMS control be reduced?",a:["Accept every sender","Use exact command checks and authorize sender numbers","Remove the LED resistor","Use random GPIO pins"],c:1,e:"Sender allowlisting and strict command parsing reduce unintended or unauthorized operation."}
+];
+const root=document.getElementById("questions");
+function render(){root.innerHTML="";quiz.forEach((item,i)=>{let f=document.createElement("fieldset");f.className="quiz-q";let l=document.createElement("legend");l.textContent=(i+1)+". "+item.q;f.appendChild(l);let os=document.createElement("div");os.className="options";item.a.forEach((a,j)=>{let lab=document.createElement("label"),r=document.createElement("input"),s=document.createElement("span");r.type="radio";r.name="q"+i;r.value=j;s.textContent=a;lab.append(r,s);os.appendChild(lab)});f.appendChild(os);let fb=document.createElement("div");fb.id="fb"+i;fb.className="feedback";f.appendChild(fb);root.appendChild(f)})}
+function check(){let score=0,answered=0;quiz.forEach((item,i)=>{let pick=document.querySelector('input[name="q'+i+'"]:checked'),fb=document.getElementById("fb"+i);fb.className="feedback show";if(pick){answered++;if(+pick.value===item.c){score++;fb.classList.add("correct");fb.textContent="Correct. "+item.e}else{fb.classList.add("incorrect");fb.textContent="Incorrect. Correct answer: "+item.a[item.c]+". "+item.e}}else{fb.classList.add("incorrect");fb.textContent="Unanswered. Correct answer: "+item.a[item.c]+". "+item.e}});document.getElementById("score").textContent="Score: "+score+" / 10 ("+score*10+"%). Answered: "+answered+" / 10.";document.getElementById("scoreBar").style.width=(score*10)+"%"}
+function reset(){document.getElementById("quizForm").reset();document.querySelectorAll(".feedback").forEach(f=>{f.className="feedback";f.textContent=""});document.getElementById("score").textContent="";document.getElementById("scoreBar").style.width="0%"}
+render();document.getElementById("checkBtn").addEventListener("click",check);document.getElementById("resetBtn").addEventListener("click",reset);
+</script>
+</body></html>
